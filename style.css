@@ -1617,3 +1617,130 @@ footer {
         gap: 1rem;
     }
 }
+
+/* Base styles for all devices */
+.floating-card,
+.skill-card,
+.stat-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.hero-cards,
+.skills-grid,
+.stats {
+    display: grid;
+    gap: 2rem;
+}
+
+.section {
+    padding: 6rem 5%;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .hero-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .floating-card:hover,
+    .skill-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    /* Show all desktop elements */
+    .glowing-circle,
+    .particles-js-canvas-el,
+    .skill-tooltip,
+    [data-tilt],
+    [data-tilt-glare] {
+        display: block !important;
+    }
+
+    /* Enable animations */
+    .animate {
+        animation-duration: initial !important;
+        animation-delay: initial !important;
+    }
+
+    /* Restore gradient text */
+    .gradient-text {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hero-cards,
+    .skills-grid,
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .floating-card,
+    .skill-card,
+    .stat-item {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Hide heavy elements on mobile */
+    .glowing-circle,
+    .particles-js-canvas-el,
+    .skill-tooltip,
+    [data-tilt],
+    [data-tilt-glare] {
+        display: none !important;
+    }
+
+    /* Disable animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
