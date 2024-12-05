@@ -1393,7 +1393,7 @@ footer {
     will-change: transform;
 }
 
-/* Reduce motion if user prefers */
+/* Reduce motion globally */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -1446,11 +1446,9 @@ footer {
     .floating-card,
     .skill-card,
     .stat-item {
+        backdrop-filter: none;
         margin: 0.5rem 0;
         padding: 1rem;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.05);
-        backdrop-filter: none;
     }
 
     /* Simplify backgrounds */
@@ -1514,5 +1512,108 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    /* Re-enable animations and effects for desktop */
+    * {
+        animation-duration: initial !important;
+        transition-duration: initial !important;
+        transform: initial !important;
+    }
+
+    /* Show visual elements on desktop */
+    .glowing-circle,
+    .particles-js-canvas-el,
+    .skill-tooltip,
+    [data-tilt],
+    [data-tilt-glare] {
+        display: block !important;
+    }
+
+    /* Restore desktop layouts */
+    .hero-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* Restore padding and margins */
+    .section {
+        padding: 6rem 5%;
+    }
+
+    .hero-content,
+    .about-content,
+    .skills-container {
+        padding: 2rem;
+    }
+
+    /* Restore card styles */
+    .floating-card,
+    .skill-card,
+    .stat-item {
+        backdrop-filter: blur(10px);
+        margin: 0;
+        padding: 2rem;
+    }
+
+    /* Restore text styles */
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    /* Restore gradient text */
+    .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Mobile styles remain unchanged */
+@media (max-width: 768px) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .glowing-circle,
+    .particles-js-canvas-el,
+    .skill-tooltip,
+    [data-tilt],
+    [data-tilt-glare] {
+        display: none !important;
+    }
+
+    .hero-cards,
+    .skills-grid,
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }

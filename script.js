@@ -1,28 +1,11 @@
 // Initialize AOS with minimal settings for mobile
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-        // Disable all animations on mobile
-        AOS.init({
-            disable: true
-        });
-        
-        // Remove particles.js on mobile
-        const particlesContainer = document.getElementById('particles-js');
-        if (particlesContainer) {
-            particlesContainer.remove();
-        }
-    } else {
-        // Desktop settings
-        AOS.init({
-            duration: 800,
-            once: true,
-            startEvent: 'load'
-        });
-        
-        // Initialize particles.js with reduced particles for better performance
+    // Check if device is desktop
+    const isDesktop = window.innerWidth >= 769;
+
+    // Initialize desktop-only features
+    if (isDesktop) {
+        // Initialize particles.js
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -43,6 +26,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+
+        // Initialize VanillaTilt for cards
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+        });
+
+        // Initialize AOS with full animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: false
+        });
+    } else {
+        // Mobile-optimized AOS
+        AOS.init({
+            duration: 500,
+            once: true,
+            mirror: false,
+            disable: true
+        });
+
+        // Remove particles.js on mobile
+        const particlesContainer = document.getElementById('particles-js');
+        if (particlesContainer) {
+            particlesContainer.remove();
+        }
+    }
+
+    // Typing animation - optimized for both desktop and mobile
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+        const text = typingText.getAttribute('data-text');
+        const typeSpeed = isDesktop ? 100 : 50;
+        
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeWriter(text, 0, typeSpeed);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(typingText);
     }
 });
 
@@ -284,3 +314,10 @@ document.addEventListener('mousemove', (e) => {
         trail.remove();
     }, 1000);
 });
+
+function typeWriter(text, i, speed) {
+    if (i < text.length) {
+        document.querySelector('.typing-text').textContent = text.substring(0, i + 1);
+        setTimeout(() => typeWriter(text, i + 1, speed), speed);
+    }
+}
