@@ -1,414 +1,422 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Barış Çetin - Software Engineer specializing in Unity, Flutter, and Dart development">
-    <title>Barış Çetin - Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Barış Çetin - Yazılım Mühendisi</title>
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Barış Çetin - Flutter, Dart, Unity ve C# uzmanı Yazılım Mühendisi">
+    <meta name="keywords" content="Barış Çetin, Yazılım Mühendisi, Flutter, Dart, Unity, C#, Game Developer">
+    
+    <!-- Stil Dosyaları -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Parçacık Arka Plan -->
     <div id="particles-js"></div>
 
-    <!-- Header Section -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <!-- Navigasyon -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span class="brand-text">Port<span class="highlight">folio</span></span>
+                <div class="brand-bar"></div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Ana Sayfa</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>Hakkımda</span>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <i class="fas fa-code"></i>
+                    <span>Yetenekler</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projeler</span>
+                </a>
+                <a href="#contact" class="contact-btn">
+                    <span>İletişim</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
+            <div class="menu-btn">
+                <div class="menu-btn__lines"></div>
+            </div>
+        </div>
+
+        <div class="nav-background">
+            <div class="nav-blur"></div>
+            <div class="nav-gradient"></div>
+        </div>
+    </nav>
+
+    <!-- Ana Bölüm -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="glowing-circle"></div>
+        <div class="container hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="gradient-text">Barış Çetin</span>
-                    <span class="typed-container">
-                        <span class="typed-text"></span>
-                        <span class="cursor">|</span>
+                <div class="hero-greeting">Merhaba, ben</div>
+                <h1 class="glitch" data-text="Barış Çetin">Barış Çetin</h1>
+                <div class="hero-subtitle">
+                    <span class="txt-rotate" data-period="2000" 
+                        data-rotate='[ "Flutter Developer", "Unity Game Developer", "Mobile App Developer", "C# Developer" ]'>
                     </span>
-                </h1>
-                <p class="hero-subtitle">Software Engineer & Game Developer</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                </div>
+                <p class="hero-description">Mobil ve oyun geliştirme konusunda tutkulu bir yazılım mühendisi.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="hero-btn primary">Projelerimi Gör</a>
+                    <a href="#contact" class="hero-btn secondary">İletişime Geç</a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-            <div class="hero-cards">
-                <div class="floating-card" data-tilt>
-                    <div class="card-icon">
+            <div class="hero-image">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="face front"><i class="fab fa-flutter"></i></div>
+                        <div class="face back"><i class="fab fa-unity"></i></div>
+                        <div class="face right"><i class="fab fa-android"></i></div>
+                        <div class="face left"><i class="fab fa-apple"></i></div>
+                        <div class="face top"><i class="fab fa-windows"></i></div>
+                        <div class="face bottom"><i class="fab fa-dev"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımda -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Hakkımda</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-frame">
+                        <img src="profile.jpg" alt="Barış Çetin">
+                        <div class="frame-border"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="years">4+</span>
+                        <span class="text">Yıl<br>Deneyim</span>
+                    </div>
+                </div>
+                
+                <div class="about-text" data-aos="fade-left">
+                    <div class="about-greeting">Merhaba! Ben Barış Çetin</div>
+                    <h3 class="about-title">Yüksek Lisans mezunu, tutkulu bir <span class="highlight">Yazılım Mühendisi</span></h3>
+                    <p class="about-description">
+                        Flutter, Unity ve C# konularında uzmanlaşmış, mobil uygulama ve oyun geliştirme tutkunu bir yazılım mühendisiyim. 
+                        Yenilikçi projeler geliştirmeyi ve teknolojik gelişmeleri yakından takip etmeyi seviyorum.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Eğitim</h4>
+                            <p>Yüksek Lisans<br>Bilgisayar Mühendisliği</p>
+                        </div>
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="fas fa-trophy"></i>
+                            <h4>Başarılar</h4>
+                            <p>20+ Başarılı<br>Proje</p>
+                        </div>
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="fas fa-code"></i>
+                            <h4>Teknolojiler</h4>
+                            <p>Flutter, Unity<br>C#, Dart</p>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-row">
+                            <div class="stat-label">Flutter & Dart</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 95%">
+                                    <span class="stat-number">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-label">Unity</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 90%">
+                                    <span class="stat-number">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-label">C#</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 85%">
+                                    <span class="stat-number">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-buttons">
+                        <a href="#contact" class="about-btn primary">İletişime Geç</a>
+                        <a href="#" class="about-btn secondary">CV'mi İndir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </section>
+
+    <!-- Yetenekler -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Yeteneklerim</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="flip-left">
+                    <div class="skill-icon">
+                        <i class="fab fa-flutter"></i>
+                    </div>
+                    <h3>Mobil Geliştirme</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Flutter</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Dart</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-aos="flip-right" data-aos-delay="100">
+                    <div class="skill-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
-                    <h3>Game Development</h3>
-                    <p>Unity Expert</p>
-                </div>
-                <div class="floating-card" data-tilt>
-                    <div class="card-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    <h3>Oyun Geliştirme</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Unity</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>C#</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="85"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Flutter & Dart</p>
                 </div>
-                <div class="floating-card" data-tilt>
-                    <div class="card-icon">
+
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Clean Code</h3>
-                    <p>Software Engineering</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content" data-aos="fade-right">
-            <h2 class="section-title">About Me</h2>
-            <p>I am a passionate Software Engineer with expertise in game development and mobile application development. With a strong foundation in Unity for game development and Flutter/Dart for cross-platform mobile applications, I bring creative solutions to complex technical challenges.</p>
-            <div class="stats">
-                <div class="stat-item" data-aos="zoom-in" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
-                    <h3>Unity</h3>
-                    <p>Game Development</p>
-                </div>
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
-                    <h3>Flutter</h3>
-                    <p>Mobile Apps</p>
-                </div>
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
-                    <h3>Dart</h3>
-                    <p>Cross-Platform</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="skills-container">
-            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
-            
-            <!-- Game Development -->
-            <div class="skills-category" data-aos="fade-up">
-                <h3>Game Development</h3>
-                <div class="skills-grid">
-                    <div class="skill-card" data-aos="zoom-in">
-                        <div class="skill-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <div class="skill-info">
-                            <h4>Unity</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%">
-                                    <div class="skill-glow"></div>
-                                </div>
+                    <h3>Web Teknolojileri</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>HTML/CSS</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="80"></div>
                             </div>
                         </div>
-                        <div class="skill-tooltip">
-                            <span>Unity Expertise</span>
-                            <ul>
-                                <li>Game Development</li>
-                                <li>C# Programming</li>
-                                <li>Unity Engine</li>
-                                <li>3D/2D Development</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Development -->
-            <div class="skills-category" data-aos="fade-up">
-                <h3>Mobile Development</h3>
-                <div class="skills-grid">
-                    <div class="skill-card" data-aos="zoom-in">
-                        <div class="skill-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="skill-info">
-                            <h4>Flutter</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%">
-                                    <div class="skill-glow"></div>
-                                </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-percent="75"></div>
                             </div>
-                        </div>
-                        <div class="skill-tooltip">
-                            <span>Flutter Expertise</span>
-                            <ul>
-                                <li>Cross-platform Development</li>
-                                <li>UI/UX Design</li>
-                                <li>State Management</li>
-                                <li>Firebase Integration</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-aos="zoom-in">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="skill-info">
-                            <h4>Dart</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%">
-                                    <div class="skill-glow"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-tooltip">
-                            <span>Dart Expertise</span>
-                            <ul>
-                                <li>Object-Oriented Programming</li>
-                                <li>Async Programming</li>
-                                <li>API Integration</li>
-                                <li>Package Development</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Software Engineering -->
-            <div class="skills-category" data-aos="fade-up">
-                <h3>Software Engineering</h3>
-                <div class="skills-grid">
-                    <div class="skill-card" data-aos="zoom-in">
-                        <div class="skill-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="skill-info">
-                            <h4>Development Tools</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%">
-                                    <div class="skill-glow"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-tooltip">
-                            <span>Development Tools</span>
-                            <ul>
-                                <li>Git Version Control</li>
-                                <li>VS Code</li>
-                                <li>Android Studio</li>
-                                <li>Unity Editor</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="tech-stack">
+            <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fab fa-android"></i>
+            </div>
+            <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="tech-item" data-aos="zoom-in" data-aos-delay="500">
+                <i class="fab fa-unity"></i>
+            </div>
+            <div class="tech-item" data-aos="zoom-in" data-aos-delay="600">
+                <i class="fab fa-github"></i>
+            </div>
+        </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projeler -->
     <section id="projects" class="projects">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Featured Projects</h2>
-            <div class="title-bar"></div>
-        </div>
-        
-        <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up">
-                <div class="project-content">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Projelerim</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="mobile">Mobil</button>
+                <button class="filter-btn" data-filter="game">Oyun</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="mobile" data-aos="fade-up">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Project 1">
+                        <img src="project1.jpg" alt="Proje 1">
                         <div class="project-overlay">
-                            <div class="tech-stack">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>AI-Powered Analytics Dashboard</h3>
-                        <p>Real-time data visualization platform with machine learning insights</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
+                        <h3>Flutter E-Ticaret</h3>
+                        <p>Modern tasarımlı e-ticaret uygulaması</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Firebase</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-content">
+                <div class="project-card" data-category="game" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" alt="Project 2">
+                        <img src="project2.jpg" alt="Proje 2">
                         <div class="project-overlay">
-                            <div class="tech-stack">
-                                <span>Vue.js</span>
-                                <span>Firebase</span>
-                                <span>WebGL</span>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>3D Product Configurator</h3>
-                        <p>Interactive 3D visualization tool for product customization</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
+                        <h3>Unity 3D Oyun</h3>
+                        <p>Aksiyon macera oyunu</p>
+                        <div class="project-tags">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>3D</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 3">
-                        <div class="project-overlay">
-                            <div class="tech-stack">
-                                <span>Next.js</span>
-                                <span>GraphQL</span>
-                                <span>AWS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Learning Platform</h3>
-                        <p>Modern learning management system with AI-powered recommendations</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="view-more" data-aos="fade-up">
-            <a href="#" class="btn btn-primary">
-                View All Projects
-                <i class="fas fa-arrow-right"></i>
-            </a>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- İletişim -->
     <section id="contact" class="contact">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Get In Touch</h2>
-            <div class="title-bar"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>İletişime Geç</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@bariscetin.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefon</h3>
+                        <p>+90 555 123 4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Konum</h3>
+                        <p>İstanbul, Türkiye</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Adınız" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Adresiniz" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Konu" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mesajınız" required></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Gönder</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
 
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-right">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Location</h3>
-                    <p>Istanbul, Turkey</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>contact@yourdomain.com</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <p>+90 555 123 4567</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link" data-tooltip="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" data-tooltip="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" data-tooltip="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" data-tooltip="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="contact-form-container" data-aos="fade-left">
-                <div class="form-card">
-                    <form class="contact-form">
-                        <div class="input-group">
-                            <input type="text" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Your Name</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Your Email</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Subject</label>
-                        </div>
-                        <div class="input-group">
-                            <textarea required></textarea>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Your Message</label>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            Send Message
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div class="contact-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Developer Portfolio. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Barış Çetin. Tüm hakları saklıdır.</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
 </body>
 </html>
