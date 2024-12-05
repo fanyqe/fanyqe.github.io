@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="glowing-circle"></div>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Creative</span>
+                    <span class="typed-container">
+                        <span class="typed-text"></span>
+                        <span class="cursor">|</span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">Turning Ideas into Digital Reality</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                </div>
+            </div>
+            <div class="hero-cards">
+                <div class="floating-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Writing elegant solutions</p>
+                </div>
+                <div class="floating-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Creative Design</h3>
+                    <p>Crafting beautiful experiences</p>
+                </div>
+                <div class="floating-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Performance</h3>
+                    <p>Optimized for speed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content" data-aos="fade-right">
+            <h2 class="section-title">About Me</h2>
+            <p>I'm a passionate software developer with expertise in creating beautiful and functional web applications. With a strong foundation in both front-end and back-end development, I bring ideas to life through clean and efficient code. My goal is to create innovative solutions that make a real impact in the digital world.</p>
+            <div class="stats">
+                <div class="stat-item" data-aos="zoom-in" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <h3>3+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <h3>50+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <h3>30+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+            
+            <!-- Frontend Development -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3>Frontend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>HTML5</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 95%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>HTML5 Expertise</span>
+                            <ul>
+                                <li>Semantic HTML</li>
+                                <li>Accessibility</li>
+                                <li>SEO Best Practices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>CSS3</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 90%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>CSS3 Expertise</span>
+                            <ul>
+                                <li>Flexbox & Grid</li>
+                                <li>Animations</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 85%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>JavaScript Expertise</span>
+                            <ul>
+                                <li>ES6+ Features</li>
+                                <li>DOM Manipulation</li>
+                                <li>Async Programming</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Development -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3>Backend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Node.js</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 80%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>Node.js Expertise</span>
+                            <ul>
+                                <li>Express.js</li>
+                                <li>RESTful APIs</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Databases</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 75%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>Database Expertise</span>
+                            <ul>
+                                <li>SQL</li>
+                                <li>MongoDB</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="skills-category" data-aos="fade-up">
+                <h3>Tools & Technologies</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Version Control</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 85%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>Version Control Expertise</span>
+                            <ul>
+                                <li>Git</li>
+                                <li>GitHub</li>
+                                <li>GitLab</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-aos="zoom-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Dev Tools</h4>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 90%">
+                                    <div class="skill-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-tooltip">
+                            <span>Development Tools</span>
+                            <ul>
+                                <li>VS Code</li>
+                                <li>Chrome DevTools</li>
+                                <li>Postman</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Featured Projects</h2>
+            <div class="title-bar"></div>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI-Powered Analytics Dashboard</h3>
+                        <p>Real-time data visualization platform with machine learning insights</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="tech-stack">
+                                <span>Vue.js</span>
+                                <span>Firebase</span>
+                                <span>WebGL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>3D Product Configurator</h3>
+                        <p>Interactive 3D visualization tool for product customization</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="tech-stack">
+                                <span>Next.js</span>
+                                <span>GraphQL</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Learning Platform</h3>
+                        <p>Modern learning management system with AI-powered recommendations</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-more" data-aos="fade-up">
+            <a href="#" class="btn btn-primary">
+                View All Projects
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Get In Touch</h2>
+            <div class="title-bar"></div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Istanbul, Turkey</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>contact@yourdomain.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+90 555 123 4567</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" data-tooltip="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" data-tooltip="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container" data-aos="fade-left">
+                <div class="form-card">
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Your Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Your Email</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Subject</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea required></textarea>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Developer Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
