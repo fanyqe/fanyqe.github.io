@@ -7,40 +7,12 @@ AOS.init({
 });
 
 // Typing Animation
-const phrases = ["Developer", "Designer", "Innovator"];
-let currentPhraseIndex = 0;
-let currentCharIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
-
-function typeText() {
-    const typedTextElement = document.querySelector('.typed-text');
-    const currentPhrase = phrases[currentPhraseIndex];
-
-    if (isDeleting) {
-        typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
-        currentCharIndex--;
-        typingSpeed = 50;
-    } else {
-        typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-        typingSpeed = 100;
-    }
-
-    if (!isDeleting && currentCharIndex === currentPhrase.length) {
-        isDeleting = true;
-        typingSpeed = 2000; // Pause at end
-    } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before starting new word
-    }
-
-    setTimeout(typeText, typingSpeed);
-}
-
-// Start typing animation
-typeText();
+const typed = new Typed('.typing', {
+    strings: ['Unity Development', 'Flutter Development', 'Mobile Apps', 'Game Development'],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+});
 
 // Mobile Navigation
 const burger = document.querySelector('.burger');
