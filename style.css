@@ -235,6 +235,9 @@ section {
     padding: 2rem;
     overflow: hidden;
     background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(28,28,32,0.95) 100%);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .hero-content {
@@ -255,6 +258,8 @@ section {
     filter: blur(80px);
     opacity: 0.3;
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .hero-title {
@@ -362,6 +367,8 @@ section {
     text-align: center;
     border: 1px solid rgba(255,255,255,0.1);
     transition: all 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .floating-card:hover {
@@ -431,6 +438,19 @@ section {
         width: 100%;
         max-width: 300px;
     }
+    
+    .glowing-circle {
+        display: none;
+    }
+    
+    .floating-card {
+        transform: none !important;
+    }
+    
+    .hero-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 /* About Section */
@@ -443,6 +463,9 @@ section {
     margin: 2rem 5%;
     padding: 3rem;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .about::before {
@@ -549,6 +572,9 @@ section {
     background: linear-gradient(135deg, rgba(18,18,18,1) 0%, rgba(32,32,38,1) 100%);
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .section-title {
@@ -733,6 +759,9 @@ section {
     background: linear-gradient(135deg, rgba(18,18,18,1) 0%, rgba(32,32,38,1) 100%);
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .skills-container {
@@ -782,6 +811,8 @@ section {
     overflow: hidden;
     transition: all 0.4s ease;
     cursor: pointer;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .skill-card::before {
@@ -841,6 +872,8 @@ section {
     position: relative;
     width: 0;
     animation: progressAnimation 1.5s ease-out forwards;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .skill-glow {
@@ -906,16 +939,16 @@ section {
 }
 
 @keyframes progressAnimation {
-    from {
-        width: 0;
+    to {
+        transform: none;
     }
 }
 
 @keyframes glowAnimation {
-    0% {
+    0%, 100% {
         transform: translateX(-100%);
     }
-    100% {
+    50% {
         transform: translateX(500%);
     }
 }
@@ -932,6 +965,10 @@ section {
     
     .skills-category h3 {
         font-size: 1.8rem;
+    }
+    
+    .skill-tooltip {
+        display: none;
     }
 }
 
@@ -1287,5 +1324,81 @@ footer {
 
     .cube-container {
         margin-top: 2rem;
+    }
+}
+
+/* Performance optimizations */
+.hero, .about, .skills, .projects, .contact {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce animation complexity on mobile */
+@media (max-width: 768px) {
+    .glowing-circle {
+        display: none;
+    }
+
+    .floating-card {
+        transform: none !important;
+    }
+
+    [data-tilt] {
+        transform: none !important;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .hero-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skill-tooltip {
+        display: none;
+    }
+
+    .particles-js-canvas-el {
+        opacity: 0.3;
+    }
+}
+
+/* Optimize animations */
+@keyframes progressAnimation {
+    to {
+        transform: none;
+    }
+}
+
+@keyframes glowAnimation {
+    0%, 100% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(500%);
+    }
+}
+
+/* Use hardware acceleration for smooth animations */
+.skill-progress, .glowing-circle, .floating-card {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

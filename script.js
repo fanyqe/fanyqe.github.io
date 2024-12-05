@@ -1,67 +1,96 @@
-// Initialize AOS with more dynamic settings
-AOS.init({
-    duration: 1000,
-    once: false,
-    mirror: true,
-    anchorPlacement: 'center-bottom'
+// Initialize AOS with reduced motion for better performance
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,
+        once: true, // animations occur only once
+        disable: 'mobile', // disable on mobile devices
+        startEvent: 'load' // start animations after everything is loaded
+    });
 });
 
-// Typing Animation
+// Typing Animation - Optimized
 const phrases = ["Unity Developer", "Game Developer", "Flutter Developer", "Mobile Developer"];
 let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
 let typingSpeed = 100;
+const typedTextElement = document.querySelector('.typed-text');
 
 function typeText() {
-    const typedTextElement = document.querySelector('.typed-text');
-    const currentPhrase = phrases[currentPhraseIndex];
+    if (!typedTextElement) return; // Guard clause
 
+    const currentPhrase = phrases[currentPhraseIndex];
+    
     if (isDeleting) {
-        typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
         currentCharIndex--;
         typingSpeed = 50;
     } else {
-        typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
         currentCharIndex++;
         typingSpeed = 100;
     }
 
+    typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex);
+
     if (!isDeleting && currentCharIndex === currentPhrase.length) {
         isDeleting = true;
-        typingSpeed = 2000; // Pause at end
+        typingSpeed = 2000;
     } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
         currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before starting new word
+        typingSpeed = 500;
     }
 
-    setTimeout(typeText, typingSpeed);
+    requestAnimationFrame(() => setTimeout(typeText, typingSpeed));
 }
 
-// Start typing animation
-typeText();
+// Start typing animation when element is visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            typeText();
+            observer.disconnect();
+        }
+    });
+});
 
-// Mobile Navigation
+if (typedTextElement) {
+    observer.observe(typedTextElement);
+}
+
+// Mobile Navigation - Optimized
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-    // Toggle Navigation
-    nav.classList.toggle('nav-active');
-
-    // Animate Links
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
+if (burger) {
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
     });
+}
 
-    // Burger Animation
-    burger.classList.toggle('toggle');
+// Optimize VanillaTilt initialization
+function initTilt() {
+    const tiltElements = document.querySelectorAll('[data-tilt]');
+    if (window.innerWidth > 768) { // Only enable on desktop
+        VanillaTilt.init(tiltElements, {
+            max: 15,
+            speed: 200,
+            glare: true,
+            'max-glare': 0.3,
+            scale: 1.02
+        });
+    }
+}
+
+// Initialize tilt effects after page load
+window.addEventListener('load', initTilt);
+
+// Debounced resize handler
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initTilt, 250);
 });
 
 // Close mobile menu when clicking outside
@@ -179,14 +208,6 @@ particlesJS('particles-js',
         }
     },
     "retina_detect": true
-});
-
-// Initialize Vanilla Tilt
-VanillaTilt.init(document.querySelectorAll(".floating-card"), {
-    max: 15,
-    speed: 400,
-    glare: true,
-    "max-glare": 0.2,
 });
 
 // Tilt Effect on Cards
