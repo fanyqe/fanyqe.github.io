@@ -61,146 +61,101 @@
     </nav>
 
     <!-- Ana Bölüm -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-greeting">Merhaba, ben</div>
-                <h1 class="glitch" data-text="Barış Çetin">Barış Çetin</h1>
-                <div class="hero-subtitle">
-                    <span class="txt-rotate" data-period="2000" 
-                        data-rotate='[ "Flutter Developer", "Unity Game Developer", "Mobile App Developer", "C# Developer" ]'>
-                    </span>
-                </div>
-                <p class="hero-description">Mobil ve oyun geliştirme konusunda tutkulu bir yazılım mühendisi.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="hero-btn primary">Projelerimi Gör</a>
-                    <a href="#contact" class="hero-btn secondary">İletişime Geç</a>
-                </div>
-                <div class="hero-social">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="face front"><i class="fab fa-flutter"></i></div>
-                        <div class="face back"><i class="fab fa-unity"></i></div>
-                        <div class="face right"><i class="fab fa-android"></i></div>
-                        <div class="face left"><i class="fab fa-apple"></i></div>
-                        <div class="face top"><i class="fab fa-windows"></i></div>
-                        <div class="face bottom"><i class="fab fa-dev"></i></div>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Merhaba, ben</p>
+                    <h1 class="glitch">Barış Çetin</h1>
+                    <h2 class="hero-subtitle">
+                        <span class="txt-rotate" data-period="2000" 
+                            data-rotate='[ "Flutter Developer", "Unity Game Developer", "Mobile App Developer", "C# Developer" ]'>
+                        </span>
+                    </h2>
+                    <p class="hero-description">
+                        Mobil ve oyun geliştirme konusunda tutkulu bir yazılım mühendisi.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="hero-btn primary">
+                            Projelerimi Gör
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="hero-btn secondary">
+                            İletişime Geç
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrows">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="hero-visual">
+                    <div class="cube-wrapper">
+                        <div class="cube">
+                            <div class="face front"><i class="fab fa-flutter"></i></div>
+                            <div class="face back"><i class="fab fa-unity"></i></div>
+                            <div class="face right"><i class="fab fa-android"></i></div>
+                            <div class="face left"><i class="fab fa-apple"></i></div>
+                            <div class="face top"><i class="fab fa-windows"></i></div>
+                            <div class="face bottom"><i class="fab fa-dev"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Hakkımda -->
-    <section id="about" class="about">
+    <section class="about" id="about">
+        <div class="section-wrapper">
+            <h2 class="section-title">Hakkımda</h2>
+        </div>
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Hakkımda</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <div class="image-frame">
-                        <img src="profile.jpg" alt="Barış Çetin">
-                        <div class="frame-border"></div>
-                    </div>
-                    <div class="experience-badge">
-                        <span class="years">4+</span>
-                        <span class="text">Yıl<br>Deneyim</span>
-                    </div>
+            <p class="about-greeting">Merhaba! Ben Barış Çetin</p>
+            <h3 class="about-role">Yüksek Lisans mezunu, tutkulu bir <span>Yazılım Mühendisi</span></h3>
+            <p class="about-description">
+                Flutter, Unity ve C# konularında uzmanlaşmış, mobil uygulama ve oyun geliştirme tutkunu bir yazılım mühendisiyim. 
+                Yenilikçi projeleri geliştirmeyi ve teknolojik gelişmeleri yakından takip etmeyi seviyorum.
+            </p>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap stat-icon"></i>
+                    <h4 class="stat-title">Eğitim</h4>
+                    <p class="stat-info">Yüksek Lisans<br>Bilgisayar Mühendisliği</p>
                 </div>
-                
-                <div class="about-text" data-aos="fade-left">
-                    <div class="about-greeting">Merhaba! Ben Barış Çetin</div>
-                    <h3 class="about-title">Yüksek Lisans mezunu, tutkulu bir <span class="highlight">Yazılım Mühendisi</span></h3>
-                    <p class="about-description">
-                        Flutter, Unity ve C# konularında uzmanlaşmış, mobil uygulama ve oyun geliştirme tutkunu bir yazılım mühendisiyim. 
-                        Yenilikçi projeler geliştirmeyi ve teknolojik gelişmeleri yakından takip etmeyi seviyorum.
-                    </p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="100">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h4>Eğitim</h4>
-                            <p>Yüksek Lisans<br>Bilgisayar Mühendisliği</p>
-                        </div>
-                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="fas fa-trophy"></i>
-                            <h4>Başarılar</h4>
-                            <p>20+ Başarılı<br>Proje</p>
-                        </div>
-                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="300">
-                            <i class="fas fa-code"></i>
-                            <h4>Teknolojiler</h4>
-                            <p>Flutter, Unity<br>C#, Dart</p>
-                        </div>
-                    </div>
-
-                    <div class="about-stats">
-                        <div class="stat-row">
-                            <div class="stat-label">Flutter & Dart</div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 95%">
-                                    <span class="stat-number">95%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-label">Unity</div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 90%">
-                                    <span class="stat-number">90%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-label">C#</div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 85%">
-                                    <span class="stat-number">85%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-buttons">
-                        <a href="#contact" class="about-btn primary">İletişime Geç</a>
-                        <a href="#" class="about-btn secondary">CV'mi İndir</a>
-                    </div>
+                <div class="stat-card">
+                    <i class="fas fa-trophy stat-icon"></i>
+                    <h4 class="stat-title">Başarılar</h4>
+                    <p class="stat-info">20+ Başarılı<br>Proje</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code stat-icon"></i>
+                    <h4 class="stat-title">Teknolojiler</h4>
+                    <p class="stat-info">Flutter, Unity<br>C#, Dart</p>
                 </div>
             </div>
         </div>
-
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
+        <div class="about-bg-elements">
+            <div class="about-shape about-shape-1"></div>
+            <div class="about-shape about-shape-2"></div>
         </div>
     </section>
 
     <!-- Yetenekler -->
-    <section id="skills" class="skills">
+    <section class="skills" id="skills">
+        <div class="section-wrapper">
+            <h2 class="section-title">Yeteneklerim</h2>
+        </div>
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Yeteneklerim</h2>
                 <div class="section-line"></div>
             </div>
             
@@ -287,10 +242,12 @@
     </section>
 
     <!-- Projeler -->
-    <section id="projects" class="projects">
+    <section class="projects" id="projects">
+        <div class="section-wrapper">
+            <h2 class="section-title">Projelerim</h2>
+        </div>
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Projelerim</h2>
                 <div class="section-line"></div>
             </div>
 
@@ -348,10 +305,12 @@
     </section>
 
     <!-- İletişim -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
+        <div class="section-wrapper">
+            <h2 class="section-title">İletişime Geç</h2>
+        </div>
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>İletişime Geç</h2>
                 <div class="section-line"></div>
             </div>
 

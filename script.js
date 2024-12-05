@@ -147,13 +147,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobil Menü
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
+// Improved Mobile Menu
+const initMobileMenu = () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-link');
+    const body = document.body;
 
-menuBtn.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-});
+    // Toggle mobile menu
+    menuBtn?.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !menuBtn.contains(e.target) && navLinks.classList.contains('active')) {
+            menuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            menuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
+
+    // Close menu when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            menuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+};
+
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', initMobileMenu);
 
 // Navbar Scroll Effect
 const initNavbar = () => {
@@ -169,20 +206,6 @@ const initNavbar = () => {
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
-
-    // Mobile Menu Toggle
-    menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-            menuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
     });
 
     // Active link on scroll
