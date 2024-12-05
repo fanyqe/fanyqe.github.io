@@ -1402,3 +1402,117 @@ footer {
         scroll-behavior: auto !important;
     }
 }
+
+/* Mobile-first optimizations */
+@media (max-width: 768px) {
+    /* Disable all animations on mobile */
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    /* Hide heavy visual elements */
+    .glowing-circle,
+    .particles-js-canvas-el,
+    .skill-tooltip,
+    [data-tilt],
+    [data-tilt-glare] {
+        display: none !important;
+    }
+
+    /* Simplify layouts */
+    .hero-cards,
+    .skills-grid,
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    /* Reduce padding and margins */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content,
+    .about-content,
+    .skills-container {
+        padding: 1rem;
+    }
+
+    /* Optimize cards */
+    .floating-card,
+    .skill-card,
+    .stat-item {
+        margin: 0.5rem 0;
+        padding: 1rem;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.05);
+        backdrop-filter: none;
+    }
+
+    /* Simplify backgrounds */
+    .hero,
+    .about,
+    .skills,
+    .projects,
+    .contact {
+        background: linear-gradient(135deg, rgba(18,18,18,1) 0%, rgba(32,32,38,1) 100%);
+    }
+
+    /* Optimize text */
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Remove unnecessary effects */
+    .gradient-text {
+        background: none;
+        color: var(--primary-color);
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        -webkit-text-fill-color: initial;
+    }
+}
+
+/* Optimize for high-performance devices */
+@media (min-width: 769px) {
+    .hero,
+    .about,
+    .skills,
+    .projects,
+    .contact {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    .skill-progress,
+    .glowing-circle,
+    .floating-card {
+        will-change: transform;
+        transform: translateZ(0);
+    }
+}
+
+/* Reduce motion globally */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

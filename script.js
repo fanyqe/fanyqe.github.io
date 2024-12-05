@@ -1,23 +1,62 @@
-// Initialize AOS with reduced motion for better performance
+// Initialize AOS with minimal settings for mobile
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        once: true, // animations occur only once
-        disable: 'mobile', // disable on mobile devices
-        startEvent: 'load' // start animations after everything is loaded
-    });
+    // Check if mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Disable all animations on mobile
+        AOS.init({
+            disable: true
+        });
+        
+        // Remove particles.js on mobile
+        const particlesContainer = document.getElementById('particles-js');
+        if (particlesContainer) {
+            particlesContainer.remove();
+        }
+    } else {
+        // Desktop settings
+        AOS.init({
+            duration: 800,
+            once: true,
+            startEvent: 'load'
+        });
+        
+        // Initialize particles.js with reduced particles for better performance
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 30,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "opacity": {
+                    "value": 0.3
+                },
+                "size": {
+                    "value": 3
+                },
+                "move": {
+                    "speed": 2
+                }
+            }
+        });
+    }
 });
 
-// Typing Animation - Optimized
+// Typing Animation - Further Optimized
 const phrases = ["Unity Developer", "Game Developer", "Flutter Developer", "Mobile Developer"];
 let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
 let typingSpeed = 100;
+let typingInterval;
 const typedTextElement = document.querySelector('.typed-text');
 
 function typeText() {
-    if (!typedTextElement) return; // Guard clause
+    if (!typedTextElement) return;
 
     const currentPhrase = phrases[currentPhraseIndex];
     
@@ -40,10 +79,11 @@ function typeText() {
         typingSpeed = 500;
     }
 
-    requestAnimationFrame(() => setTimeout(typeText, typingSpeed));
+    clearTimeout(typingInterval);
+    typingInterval = setTimeout(typeText, typingSpeed);
 }
 
-// Start typing animation when element is visible
+// Start typing animation only when visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -51,46 +91,57 @@ const observer = new IntersectionObserver((entries) => {
             observer.disconnect();
         }
     });
-});
+}, { threshold: 0.5 });
 
 if (typedTextElement) {
     observer.observe(typedTextElement);
 }
 
-// Mobile Navigation - Optimized
+// Mobile Navigation - Simplified
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
 
-if (burger) {
+if (burger && nav) {
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
         burger.classList.toggle('toggle');
     });
 }
 
-// Optimize VanillaTilt initialization
+// Optimize scroll performance
+let ticking = false;
+function onScroll() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            // Add any scroll-based animations here
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// Initialize tilt only on desktop with reduced settings
 function initTilt() {
-    const tiltElements = document.querySelectorAll('[data-tilt]');
-    if (window.innerWidth > 768) { // Only enable on desktop
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const tiltElements = document.querySelectorAll('[data-tilt]');
         VanillaTilt.init(tiltElements, {
-            max: 15,
-            speed: 200,
-            glare: true,
-            'max-glare': 0.3,
-            scale: 1.02
+            max: 5,
+            speed: 400,
+            scale: 1.01,
+            glare: false
         });
     }
 }
 
-// Initialize tilt effects after page load
+// Initialize tilt after page load
 window.addEventListener('load', initTilt);
 
-// Debounced resize handler
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(initTilt, 250);
+// Clean up event listeners when possible
+window.addEventListener('unload', () => {
+    window.removeEventListener('scroll', onScroll);
+    clearTimeout(typingInterval);
 });
 
 // Close mobile menu when clicking outside
@@ -100,9 +151,6 @@ document.addEventListener('click', (e) => {
         !burger.contains(e.target)) {
         nav.classList.remove('nav-active');
         burger.classList.remove('toggle');
-        navLinks.forEach(link => {
-            link.style.animation = '';
-        });
     }
 });
 
@@ -150,65 +198,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 skillCards.forEach(card => observer.observe(card));
-
-// Initialize Particles.js
-particlesJS('particles-js',
-{
-    "particles": {
-        "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-        },
-        "color": {
-            "value": "#ffffff"
-        },
-        "shape": {
-            "type": "circle"
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": true
-        },
-        "size": {
-            "value": 3,
-            "random": true
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false
-        }
-    },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-        }
-    },
-    "retina_detect": true
-});
 
 // Tilt Effect on Cards
 VanillaTilt.init(document.querySelectorAll('.project-card'), {
